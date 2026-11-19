@@ -9,6 +9,6 @@ public class CardPayment implements PaymentMethod {
         if (amount <= 0) {
             throw new IllegalArgumentException("Card payment amount must be greater than zero");
         }
-        System.out.println("Paid UGX " + amount + " using Bank Card");
+        System.out.println("Paid UGX " + String.format("%,.0f", amount) + " using Bank Card");
     }
 }
