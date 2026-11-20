@@ -14,6 +14,9 @@ public class OrderService {
     }
 
     public void placeOrder(String item, int amount) {
+        if (item == null || item.isBlank()) {
+            throw new IllegalArgumentException("Item name cannot be empty");
+        }
         System.out.println("Order placed: " + item);
         paymentMethod.pay(amount);
     }
