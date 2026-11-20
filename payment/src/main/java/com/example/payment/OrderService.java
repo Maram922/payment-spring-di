@@ -17,6 +17,9 @@ public class OrderService {
         if (item == null || item.isBlank()) {
             throw new IllegalArgumentException("Item name cannot be empty");
         }
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Order amount must be greater than zero");
+        }
         System.out.println("Order placed: " + item);
         paymentMethod.pay(amount);
     }
